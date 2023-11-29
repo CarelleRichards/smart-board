@@ -4,10 +4,6 @@
  * 
  * If any changes are made, they are reverted back at he end of the test to 
  * ensure all tests are based off the original startUp() data.
- * 
- * Note: I tried to use @BeforeEach and clear() for the startUp() data 
- * so I didn't have to worry about reverting changes or signing in/out 
- * but it doesnt seem to work for my program.
  */
 
 package application;
