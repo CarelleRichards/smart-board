@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" prefHeight="483.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TaskController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true">
+         <content>
+            <VBox alignment="TOP_CENTER" prefWidth="550.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Task name*">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="taskName">
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Description">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextArea fx:id="taskDescription" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="93.0" prefWidth="450.0" wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="100.0">
+                     <children>
+                        <Hyperlink fx:id="addDueDateHyperlink" onAction="#addDueDateOption" style="-fx-padding: 0; -fx-border-color: transparent;" text="Add due date" />
+                        <VBox fx:id="dueDateEnabledVbox" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="5.0" prefWidth="450.0">
+                                 <children>
+                                    <Label text="Due date">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Hyperlink onAction="#removeDueDateOption" style="-fx-padding: 0; -fx-border-color: transparent;" text="Remove">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Hyperlink>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                                 <children>
+                                    <DatePicker fx:id="dueDatePicker" onAction="#loadStatus" />
+                                    <CheckBox fx:id="completionCheckBox" mnemonicParsing="false" onAction="#completionCheckBox" text="Mark complete">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin></CheckBox>
+                                    <Label fx:id="statusLabel">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefWidth="356.0">
+                     <children>
+                        <Hyperlink fx:id="addChecklistHyperlink" onAction="#addChecklistOption" style="-fx-padding: 0; -fx-border-color: transparent;" text="Add checklist" />
+                        <VBox fx:id="checklistEnabledVbox" prefWidth="348.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="448.0">
+                                 <children>
+                                    <Label text="Checklist">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Hyperlink onAction="#removeChecklistOption" style="-fx-padding: 0; -fx-border-color: transparent;" text="Remove">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Hyperlink>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefWidth="448.0">
+                                 <children>
+                                    <Label fx:id="checklistPercentageLabel" prefHeight="0.0" prefWidth="55.0" text="100%" />
+                                    <ProgressBar fx:id="checklistProgressBar" prefHeight="20.0" prefWidth="394.0" progress="0.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </HBox>
+                              <VBox fx:id="actionItemVbox" />
+                              <Hyperlink onAction="#addActionItem" style="-fx-padding: 0; -fx-border-color: transparent;" text="Add an item">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></Hyperlink>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <Label fx:id="alertMessageOutput" alignment="TOP_CENTER" contentDisplay="TOP">
+                     <padding>
+                        <Insets bottom="30.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="TOP_CENTER" prefHeight="2.0" prefWidth="450.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#submit" text="Submit">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#close" text="Close">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

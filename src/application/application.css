@@ -1,0 +1,12 @@
+.root {
+    -fx-font-size: 9.5pt;
+    -fx-font-family: "Verdana";
+    }
+    
+.boldHeading {
+	-fx-font-weight: bold;
+}
+
+.quote {
+	-fx-font-style: italic;
+}
