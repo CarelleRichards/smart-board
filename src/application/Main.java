@@ -1,8 +1,4 @@
 /*
- * COSC2288 Further Programming, SP3, 2021
- * Assignment 2: Project Management Application
- * 
- * @author  Carelle Mulawa-Richards (s3749114)
  * @version 1.0
  * @since   21-11-2021
  */
