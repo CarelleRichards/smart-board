@@ -2,7 +2,7 @@
 
 ## Overview 
 
-As part of a university assignment, I created Smart Board, a Kanban-style desktop application for managing work. The application is written in Java and and makes use of the Java Collections Framework, JavaFX, exception handling, MVC design pattern, serialisation and deserialisation. The main features are listed below.
+Smart Board is a Kanban-style desktop application for managing work. The application is written in Java and and makes use of the Java Collections Framework, JavaFX, exception handling, MVC design pattern, serialisation and deserialisation. The main features are listed below.
  
 - User registration, log in and log out.
 - Random quote on dashboard. 
